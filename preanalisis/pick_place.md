@@ -10,7 +10,7 @@ Necesitamos dos, el primero genera al otro.
 ## `pick_place.py`
 Este pequeño código genera una ventana con una lista desplegable para escoger el lugar donde se ejecuta el código, una vez seleccionado se genera el archivo `place.py` que tiene como única línea el lugar escogido, este segundo archivo es posteriormente leido por [run_params.py](run_params) para decidir las rutas a utilizar.
 
-{. :librerias }
+{: .librerias }
 > Utiliza los siguientes módulos 
 > - Tkinter
 

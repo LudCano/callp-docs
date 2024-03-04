@@ -15,4 +15,4 @@ Pueden descargar el [repositorio](http://github.com/LFAUMSA/LIDAR_PYTHON), una v
 
 ## Carpetas auxiliares
 ### `lidar_data`
-Esta carpeta contiene solamente los datos del lidar, puede estar ordenada de la forma que se guste, el código busca directamente en cada carpeta, subcarpeta y consiguiente en archivos de formato válido (más de esto en el módulo [read_modules.py]({% link read_modules.md %})
+Esta carpeta contiene solamente los datos del lidar, puede estar ordenada de la forma que se guste, el código busca directamente en cada carpeta, subcarpeta y consiguiente en archivos de formato válido (más de esto en el módulo [read_modules.py](read_modules.md)

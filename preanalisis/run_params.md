@@ -1,6 +1,6 @@
 ---
 title: run_params.py
-layout: minimal
+layout: default
 nav_order: 1
 parent: Parámetros iniciales
 ---

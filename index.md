@@ -1,6 +1,7 @@
 ---
 title: Inicio
 layout: home
+nav_order: 1
 ---
 
 En esta página se encuentra la documentación para el código de LIDAR a utilizar en el instrumento localizado en el campus universitario de Cota Cota.

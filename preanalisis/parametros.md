@@ -12,3 +12,5 @@ El código cuenta con 3 archivos de parámetros iniciales, los cuales desarrolla
 ## [`run_params.py`](run_params)
 Este archivo tiene como objetivo parámetros predefinidos de la interfaz del código, como ser si queremos que se muestre alguna figura por defecto, alguna fecha por defecto, etc.
 
+## [`params.py`](params)
+Este archivo tiene como objetivo parámetros predefinidos para los cálculos del código.

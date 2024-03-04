@@ -15,7 +15,7 @@ Pueden descargar el [repositorio](http://github.com/LFAUMSA/LIDAR_PYTHON), una v
 
 ## Carpetas auxiliares
 ### 1. `lidar_data`
-Esta carpeta contiene solamente los datos del lidar, puede estar ordenada de la forma que se guste, el código busca directamente en cada carpeta, subcarpeta y consiguiente en archivos de formato válido (más de esto en el módulo [read_modules.py](read_modules.md)
+Esta carpeta contiene solamente los datos del lidar, puede estar ordenada de la forma que se guste, el código busca directamente en cada carpeta, subcarpeta y consiguiente en archivos de formato válido (más de esto en el módulo [read_modules.py](read_modules)
 
 ### 2. `lidar_calib`
 Esta carpeta contiene los calibradores p45 y m45. Ésta puede estar contenida en la carpeta de datos, y será ignorada por el código.

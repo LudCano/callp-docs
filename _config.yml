@@ -5,4 +5,20 @@ theme: just-the-docs
 url: https://ludcano.github.io/callp-docs
 
 aux_links:
-  Repositorio: http://github.com/LFAUMSA/LIDAR_PYTHON
+  GitHub CALLP: http://github.com/LFAUMSA/LIDAR_PYTHON
+
+callouts:
+  highlight:
+    color: yellow
+  important:
+    title: Importante
+    color: blue
+  new:
+    title: Nuevo
+    color: green
+  note:
+    title: Nota
+    color: purple
+  warning:
+    title: Advertencia
+    color: red

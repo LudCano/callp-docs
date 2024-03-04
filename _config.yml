@@ -10,8 +10,8 @@ aux_links:
 callouts:
   highlight:
     color: yellow
-  important:
-    title: Importante
+  librerias:
+    title: Librerias
     color: blue
   new:
     title: Nuevo

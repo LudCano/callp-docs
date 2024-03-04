@@ -8,6 +8,9 @@ parent: Parámetros iniciales
 # params.py
 Acá tenemos parámetros importantes para el código del LIDAR, fuera de los datos escogidos, éstos no cambian.
 
+{: .warning }
+No cambiar estos parámetros sin revisar sus implicaciones, de ser necesario contactar al desarrollador.
+
 ```python
 rnz = 1000                        #numero de bins
 rdz = 15.0                        # rawdata range resolution meter #del log

@@ -17,6 +17,12 @@ Este pequeño código genera una ventana con una lista desplegable para escoger 
 Crea una ventana como se muestra en la figura  
 ![](figs/pick_place.png)
 
+**NOTA**: Si se desea añadir un elemento más a la lista de opciones, hacerlo en la línea 10.
+```python
+lst = ["Cota Cota", "Dev", "Linux"] #añadir nuevo elemento
+```
+{. :warning}
+Si el computador es Linux, pueden presentarse problemas en los separadores por defecto de rutas, para este caso contactar al desarrollador.
 
 ## `place.py`
 Este archivo solamente es un parámetro y se borra con cada actualización, su objetivo es que guarde localmente el lugar donde está instalado el código y así use las rutas establecidas en [`run_params.py`](run_params), se crea automáticamente mediante el módulo de pick place, que es el primero en ejecutarse en caso que no exista el lugar. Si ya existe este archivo el código se salta dicho módulo y entra directamente al menú de escoger dato.

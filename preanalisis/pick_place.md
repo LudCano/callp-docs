@@ -1,7 +1,7 @@
 ---
 title: pick_place.py
 layout: default
-nav_order: 3
+nav_order: 1
 parent: Parámetros iniciales
 ---
 # Archivos de configuración de lugar

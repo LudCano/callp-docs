@@ -57,3 +57,7 @@ tk.mainloop()
 
 ## `place.py`
 Este archivo solamente es un parámetro y se borra con cada actualización, su objetivo es que guarde localmente el lugar donde está instalado el código y así use las rutas establecidas en [`run_params.py`](run_params), se crea automáticamente mediante el módulo de pick place, que es el primero en ejecutarse en caso que no exista el lugar. Si ya existe este archivo el código se salta dicho módulo y entra directamente al menú de escoger dato.
+
+```python
+place = "Cota Cota" #para cuando se ejecuta en campus
+```

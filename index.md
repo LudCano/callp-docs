@@ -11,6 +11,6 @@ El código está escrito en Python, y toma de base el código escrito en MATLAB 
 
 ----
 
-[^1]: [lcano@chacaltaya.edu.bo](lcano@chacaltaya.edu.bo).
-[^2]: [syoshihara@chacaltaya.edu.bo](syoshihara@chacaltaya.edu.bo).
+[^1]: [lcano@chacaltaya.edu.bo](mailto:lcano@chacaltaya.edu.bo).
+[^2]: [syoshihara@chacaltaya.edu.bo](mailto:syoshihara@chacaltaya.edu.bo).
 

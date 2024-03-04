@@ -21,7 +21,7 @@ Crea una ventana como se muestra en la figura
 ```python
 lst = ["Cota Cota", "Dev", "Linux"] #añadir nuevo elemento
 ```
-{. :warning}
+{. :warning }
 Si el computador es Linux, pueden presentarse problemas en los separadores por defecto de rutas, para este caso contactar al desarrollador.
 
 ## `place.py`

@@ -14,7 +14,7 @@ Este pequeño código genera una ventana con una lista desplegable para escoger 
 > Utiliza los siguientes módulos 
 > - Tkinter
 
-Crea una ventana como se muestra en la figura
+Crea una ventana como se muestra en la figura  
 ![](figs/pick_place.png)
 
 

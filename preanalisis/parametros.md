@@ -3,6 +3,7 @@ layout: default
 title: Parámetros iniciales
 nav_order: 3
 has_children: true
+has_toc: false
 ---
 
 # Archivos de parámetros iniciales

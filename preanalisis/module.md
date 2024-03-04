@@ -1,4 +1,5 @@
 ---
+layout: default
 title: Modulos
 nav_order: 2
 ---

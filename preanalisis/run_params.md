@@ -25,7 +25,7 @@ plot_molecular = True   #hacer ajuste molecular
 ## Parámetros basados en lugar
 Se lee el archivo `place.py`, generado por el módulo [pick_place.py](pick_place). Acorde a eso escogemos los parámetros.
 
-```
+```python
 from place import place #importando el parámetro deseado
 
 #escogiendo las rutas acorde a cet parámetro

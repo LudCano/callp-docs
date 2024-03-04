@@ -14,7 +14,45 @@ Este pequeño código genera una ventana con una lista desplegable para escoger 
 > Utiliza los siguientes módulos 
 > - Tkinter
 
+```python
+### pick_place.py
+import tkinter as tk
+from tkinter import ttk
 
+## WINDOW AND GENERAL FRAME
+global app
+app = tk.Tk()
+app.geometry("200x130")
+app.title("ESCOGER LUGAR DE EJECUCIÓN")
+
+#lista de opciones por ahora
+lst = ["Cota Cota", "Dev", "Linux"]
+
+# FRAME 
+frame = tk.Frame(app)
+frame.pack()
+dato_escoger_label = tk.Label(frame, text="Lugar donde se ejecuta")
+dato_escoger_label.pack()
+global lugar_escoger_dropdwn
+lugar_escoger_dropdwn = ttk.Combobox(frame, values=lst)
+lugar_escoger_dropdwn.current(0)
+lugar_escoger_dropdwn.pack()
+
+def ejecutar():
+    f = open("place.py", "w")
+    p = lugar_escoger_dropdwn.get()
+    t = f"place = '{p}'"
+    f.write(t)
+    f.close()
+    app.destroy()
+    return
+
+run_button = tk.Button(frame, text="LANZAR CALLP", command=ejecutar)
+run_button.pack()
+
+tk.mainloop()
+
+```
 
 
 ## `place.py`

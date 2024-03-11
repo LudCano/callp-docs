@@ -1,7 +1,7 @@
 ---
 title: interactivo.py
 layout: default
-nav_order: 1
+nav_order: 2
 parent: Pre análisis
 ---
 
@@ -13,6 +13,7 @@ Como dicho en la página principal, este módulo se centra en crear la interfaz 
 > Utiliza las siguientes librerías
 > - `tkinter` : Librería de interfaces.
 > - `PIL` : (pillow) Para mostrar imágenes.
+> - `pandas` : Manejo de tablas .csv.
 
 El menú principal del código se ve como la siguiente figura:  
 ![](figs/menu.png)
@@ -45,3 +46,39 @@ Acá tenemos parámetros a usar durante el código, la mayoría son checkboxes p
  - **Mostrar Quicklook**: Mostrar quicklook (detalles en [quicklook](../quicklook)).
  - **Mostrar DEP**: Mostrar depolarización (detalles en [depolarización](../depolarizacion)).
  - **Mostrar Molecular**: Realizar y mostrar el ajuste molecular (detalles en [Ajuste Molecular](../ajustemolecular)).
+
+# Código
+Ahora seccionaremos el código para mostrar lo que hace, en realidad, en Tkinter creamos objetos como botones, listas, etc. y posteriormente obtenemos los parámetros puestos a través de algún método.
+
+Primero las librerías a utilizar
+```python
+import tkinter as tk
+from tkinter import ttk
+from PIL import Image, ImageTk
+import pandas as pd
+import params
+import run_params
+from lidar_master import get_from_interactive
+```
+
+Notemos que llamamos al master, específicamente llamamos a una función ahí que se llama `get_from_interactive` y es la función que comunica este módulo con el master.  
+Ésta función toma los valores (mandados por el interactivo) y genera una variable global (que se sale de la función), lo que hace que estos valores pasen directamente al master.
+```python
+#------------ en lidar_master.py -----------------
+def get_from_interactive(vals):
+    global vals_from_interac
+    vals_from_interac = vals
+```
+
+Posteriormente necesitamos los valores predeterminados de las listas desplegables, entonces leemos el archivo `data.csv` generado por [read_modules](read_modules) y lo trabajamos con pandas
+```python
+## Obteniendo los datos
+lst_data = pd.read_csv("./data.csv")                             #leemos el archivo
+lst_data["anho"] = [i[:4] for i in lst_data.fecha.to_list()]     #obtenemos años
+lst_data["mes"] = [i[:7] for i in lst_data.fecha.to_list()]      #obtenemos meses 
+anho_unique = list(lst_data.anho.unique())                       #generamos la lista unica de años
+mes_unique = list(lst_data.mes.unique())                         #generamos la lista unica de meses
+dark_lst = lst_data[lst_data.tipo == "dark"].fecha.to_list()     #generamos las opciones de calibradores (darks)
+```
+
+

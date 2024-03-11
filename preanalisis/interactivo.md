@@ -10,5 +10,5 @@ Como dicho en la página principal, este módulo se centra en crear la interfaz 
 
 {: .librerias }
 > Utiliza las siguientes librerías
-> - `tkinter` 
-> A paragraph with a custom title callout
+> - `tkinter` : Librería de interfaces.
+

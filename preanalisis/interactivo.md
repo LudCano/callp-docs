@@ -9,6 +9,6 @@ parent: Pre análisis
 Como dicho en la página principal, este módulo se centra en crear la interfaz para el menú principal, es llamado como un ejecutable a parte debido a particularidades de la librería usada (`tkinter`). Se apoya de varias funciones en el módulo [read_modules.py](read_modules).
 
 {: .librerias }
-> My note title
->
+> Utiliza las siguientes librerías
+> - `tkinter` 
 > A paragraph with a custom title callout

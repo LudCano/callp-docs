@@ -17,7 +17,7 @@ Los siguientes módulos se ejecutan al inicio y tienen como objetivo reconocer l
 
 A continuación un resumen de todos los módulos que comprenden el pre-análisis.
 
-## `interactivo.py`
+## interactivo.py
 Este módulo es la base del menú interfaz del código. Es llamado por el master como un ejecutable aparte, es decir:
 
 ```python

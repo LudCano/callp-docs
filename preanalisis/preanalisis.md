@@ -19,7 +19,7 @@ Los siguientes módulos se ejecutan al inicio y tienen como objetivo reconocer l
 
 A continuación un resumen de todos los módulos que comprenden el pre-análisis.
 
-## interactivo.py
+## [interactivo.py](interactivo)
 Este módulo es la base del menú interfaz del código. Es llamado por el master como un ejecutable aparte, es decir:
 
 ```python
@@ -30,7 +30,7 @@ with open("interactivo.py") as f:
 
 Nos devuelve todos los parámetros específicos de esta ejecución. Más detalles en la página dedicada a este módulo.
 
-## read_modules.py
+## [read_modules.py](interactivo)
 Este es un script que contiene varias funciones y algoritmos, desde buscar los datos, presentarlos, crear el log y su respectivo header (encabezado) e incluso leer la primera parte de los datos. Es llamado por el master múltiples veces para usar funciones principales que se apoyan de otras.
 ```python
 #-------------- (en lidar_master.py) ----------------------

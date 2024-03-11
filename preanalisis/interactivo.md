@@ -6,7 +6,7 @@ parent: Pre análisis
 ---
 
 # interactivo.py
-_Última actualización: 27 feb 2024_
+_Última actualización: 27 feb 2024_  
 Como dicho en la página principal, este módulo se centra en crear la interfaz para el menú principal, es llamado como un ejecutable a parte debido a particularidades de la librería usada (`tkinter`). Se apoya de varias funciones en el módulo [read_modules.py](read_modules).
 
 {: .librerias }
@@ -17,6 +17,7 @@ Como dicho en la página principal, este módulo se centra en crear la interfaz 
 El menú principal del código se ve como la siguiente figura:  
 ![](figs/menu.png)
 
+### Primera columna
 En la primera columna (Carpetas) se observan los siguientes parámetros:
  - **Carpeta de datos**: Ruta general donde se encuentran los datos (éstos pueden estar muy anidados, es decir, encontrarse dentro de varias subcarpetas).
  - **Carpeta de calibs**: Ruta de calibradores
@@ -26,6 +27,16 @@ En la primera columna (Carpetas) se observan los siguientes parámetros:
 
 Posteriormente tenemos un botón **ACTUALIZAR** que busca los datos y genera el archivo de compilado de información de los datos disponibles.
 
-{ .note }
+{: .note }
 Es recomendado que después de usar el botón ACTUALIZAR se reinicie el programa, este bug será reparado en futuras versiones.
+
+### Segunda columna
+En esta columna escogeremos el dato deseado a través de 3 listas desplegables. El manejo de las listas superiores (gestión y mes) filtran automáticamente los datos disponibles en la última lista desplegable (Dato a escoger)  
+ - **GESTION**: Nos permite escoger el año.
+ - **MES**: Filtra por mes en formato `YYYY_MM` (por ejemplo `2022_10` es Octubre de 2023).
+ - **Dato a escoger**: Fechas disponibles de datos. En caso que aparezca algún duplicado la elección es indiferente. Por defecto existe un dato ya seleccionado, se puede cambiar este parámetro en [run_params.py](run_params)
+
+### Opciones
+
+
 

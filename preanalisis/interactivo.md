@@ -14,5 +14,18 @@ Como dicho en la página principal, este módulo se centra en crear la interfaz 
 > - `tkinter` : Librería de interfaces.
 > - `PIL` : (pillow) Para mostrar imágenes.
 
-El menú principal del código se ve como la siguiente figura:
+El menú principal del código se ve como la siguiente figura:  
 ![](figs/menu.png)
+
+En la primera columna (Carpetas) se observan los siguientes parámetros:
+ - **Carpeta de datos**: Ruta general donde se encuentran los datos (éstos pueden estar muy anidados, es decir, encontrarse dentro de varias subcarpetas).
+ - **Carpeta de calibs**: Ruta de calibradores
+ - **Carpeta auxiliar**: Para algunos outputs, los archivos `log` se escriben acá.
+ - **Carpeta figuras**: Lugar donde se almacenan las figuras generadas por el código.
+ - **Generar LOG** (checkbox): Si se desea que se genere el archivo log (se encuentra almacenado en la carpeta auxiliar).
+
+Posteriormente tenemos un botón **ACTUALIZAR** que busca los datos y genera el archivo de compilado de información de los datos disponibles.
+
+{ .note }
+Es recomendado que después de usar el botón ACTUALIZAR se reinicie el programa, este bug será reparado en futuras versiones.
+

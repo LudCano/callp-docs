@@ -66,5 +66,8 @@ def dark_noise(ruta_dark, interactivo, plot_dark, use_log):
     return ych1, ych2
 ```
 
+## Gráfico
+El gráfico resultante es semejante a lo siguiente:
+![](noise_example.png)
 
 

@@ -264,7 +264,7 @@ def pick_calib(pola_dir, interactivo, picked, use_log):
 > Tiene los siguientes inputs:
 > - `use_log` : Imprimir información también en el log.
 > - `interactivo` : (sin uso) Falso desde el uso de interfaz 
-> - `ya_escogido` : Fecha de datos a analizar
+> - `ya_escogido` : Fecha de datos a analizar  
 > Devuelve:
 > - `escogido` : Ruta de los datos a leer.
 > - `ruta_dark` : Ruta de los darks a usar en calibración 
@@ -305,7 +305,7 @@ Lee los datos dados en una ruta.
 
 {: .parametros }
 > Tiene los siguientes inputs:
-> - `ifile` : Ruta de los datos a leer
+> - `ifile` : Ruta de los datos a leer  
 > Devuelve:
 > - `t0` : Vector de tiempos (en horas decimales).
 > - `ch1` : Matriz de datos canal 1 

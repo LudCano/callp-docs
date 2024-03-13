@@ -22,3 +22,6 @@ callouts:
   warning:
     title: Advertencia
     color: red
+  parametros:
+    title: Parámetros
+    color: grey-lt

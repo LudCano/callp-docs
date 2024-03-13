@@ -24,15 +24,6 @@ has_toc: true
 > - `use_log` : Imprimir información en el log?
 >   
 > Devuelve:
-> - `escogido` : Ruta de los datos a leer.
-> - `ruta_dark` : Ruta de los darks a usar en calibración 
-> - `f` : Fecha de datos a analizar{: .parametros }
-> Tiene los siguientes inputs:
-> - `use_log` : Imprimir información también en el log.
-> - `interactivo` : (sin uso) Falso desde el uso de interfaz 
-> - `ya_escogido` : Fecha de datos a analizar
->   
-> Devuelve:
 > - `ych1` : Ruido canal 1 (vector).
 > - `ych2` : Ruido canal 2 (vector).
 

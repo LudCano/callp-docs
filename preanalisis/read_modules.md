@@ -8,6 +8,7 @@ has_toc: true
 
 # read_modules.py
 Este módulo tiene varias funciones que son llamadas tanto por [lidar_master.py](lidar_master) (directamente) como por el módulo [interactivo.py](interactivo).
+{:toc}
 
 {: .librerias }
 > Utiliza las siguientes librerías
@@ -254,3 +255,31 @@ def pick_calib(pola_dir, interactivo, picked, use_log):
 
 ```
 
+## 4. Ruta de datos (`pick_data(use_log, interactivo, ya_escogido)`)
+Una vez escogido un dato (fecha en `ya_escogido`), establecemos la ruta usando la tabla `data.csv`, establecemos las rutas y devolvemos los siguientes parámetros.
+```python
+def pick_data(use_log, interactivo, ya_escogido):
+    myprint("Archivo leído ", use_log)
+    df = pd.read_csv("data.csv")
+    d = pd.read_csv("data.csv")
+    df = df[df.tipo == "data"]
+    df.reset_index(inplace = True)
+
+    escogido = df[df.fecha == ya_escogido]
+    aux = d[(d.fecha == ya_escogido) & (d.tipo == "dark")]
+    carpeta_gen = escogido.carpeta.to_list()[0]
+    escogido = escogido.ruta.to_list()[0]
+    myprint(f"Se escogieron los datos del {ya_escogido}", use_log)
+    f = ya_escogido
+    
+    if len(aux) > 0:
+        myprint("Se encontró el archivo dark correspondiente", use_log)
+    else:
+        myprint("NO SE ENCONTRÓ ARCHIVO DARK ESE DÍA, REVISAR CARPETAS", use_log)
+        exit
+    
+    myprint("Ruta establecida", use_log)
+    ruta_dark = aux.ruta.to_list()[0]
+    return escogido, ruta_dark, f, carpeta_gen
+    
+```

@@ -70,7 +70,34 @@ def create_log(aux_dir, use_log):
     return log_fname
 ```
 
+### 2.4. `create_header(p, flg)`
+Genera el header (inicio) del archivo log, para eso necesita los parámetros iniciales (diccionario `p`) y `flg` nos indica si se usará en el log o solamente en pantalla de terminal.
 
+```python
+def create_header(p, flg):
+
+    myprint("-------------------", flg)
+    myprint("*******************", flg)
+    myprint("CÓDIGO LIDAR LA PAZ", flg)
+    myprint("*******************", flg)
+    myprint("Ejecutado en:", flg)
+    now = datetime.now()
+    now = now.strftime("%d/%m/%Y %H:%M:%S")
+    myprint(now, flg)
+    myprint("*******************", flg)
+
+    if flg:
+        print_log("PARÁMETROS USADOS...")
+        print_log("Dato escogido = " +p[0])
+        print_log("Calibrador escogido = "+ p[1])
+        print_log("Mostrar ruido =  "+ str(p[2]))
+        print_log("Mostrar calibracion = "+ str(p[3]))
+        print_log("Mostrar quicklook = "+ str(p[4]))
+        print_log("Mostrar DEP = "+ str(p[5]))
+        print_log("*******************")
+```
+
+El header del log tiene la siguiente forma:
 
 
 

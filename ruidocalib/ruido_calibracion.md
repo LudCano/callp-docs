@@ -7,7 +7,7 @@ has_toc: false
 ---
 
 # Ruido y calibración
-Scripts que leen los datos y obtienen señales de ruido y calibración.
+Scripts que leen los datos y obtienen señales de ruido y calibración. Todo el código relacionado a esta sección se encuentra en un único módulo `noise_calibration.py`. Sin embargo, es conveniente separar a estos dos procesos, los cuales son:
 
 ## [Corriente oscura](dark_noise)
 

@@ -97,7 +97,9 @@ def create_header(p, flg):
         print_log("*******************")
 ```
 
-El header del log tiene la siguiente forma:
+El header del log muestra la siguiente información:
+![](figs/header_log.png)
+
 
 
 

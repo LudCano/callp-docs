@@ -265,6 +265,11 @@ def pick_calib(pola_dir, interactivo, picked, use_log):
 > - `use_log` : Imprimir información también en el log.
 > - `interactivo` : (sin uso) Falso desde el uso de interfaz 
 > - `ya_escogido` : Fecha de datos a analizar
+> Devuelve:
+> - `escogido` : Ruta de los datos a leer.
+> - `ruta_dark` : Ruta de los darks a usar en calibración 
+> - `f` : Fecha de datos a analizar
+> - `carpeta_gen`: Carpeta de los datos, ahí almacenaremos algunos archivos temporales.
 
 
 Una vez escogido un dato (fecha en `ya_escogido`), establecemos la ruta usando la tabla `data.csv`, establecemos las rutas y devolvemos los siguientes parámetros.
@@ -293,4 +298,40 @@ def pick_data(use_log, interactivo, ya_escogido):
     ruta_dark = aux.ruta.to_list()[0]
     return escogido, ruta_dark, f, carpeta_gen
     
+```
+
+## 5. Lectura de datos (`read_sig(ifile)`)
+Lee los datos dados en una ruta.
+
+{: .parametros }
+> Tiene los siguientes inputs:
+> - `ifile` : Ruta de los datos a leer
+> Devuelve:
+> - `t0` : Vector de tiempos (en horas decimales).
+> - `ch1` : Matriz de datos canal 1 
+> - `ch2` : Matriz de datos canal 2
+
+```python
+def read_sig(ifile):
+    rnz = 1000  #Largo de los datos (original)
+    anz = 500   #Largo post-promediado
+    nz = rnz
+    # open file
+    #='2023_08_09_HR1033_A90_data_2CH.txt'
+    with open(file=ifile,mode='r') as fin:
+        lines = fin.readlines()
+        n = int(len(lines) / 2) # number of lines
+        t0  = np.empty(n)
+        ch1 = np.empty([nz,n])
+        ch2 = np.empty([nz,n])
+        for i in tqdm(range(n), "Leyendo datos..."):
+            ii = i * 2
+            line1 = lines[ii].strip().split()
+            line2 = lines[ii+1].strip().split()
+            t0[i] = float(line1[0])+float(line1[1])/60.0+float(line1[2])/3600.0
+            ch1[:,i] = np.array([float(line1[4+j])*1e3 for j in range(nz)])
+            ch2[:,i] = np.array([float(line2[1+j])*1e3 for j in range(nz)])
+    
+    print("Original data shape : ", ch1.shape)
+    return t0,ch1,ch2
 ```

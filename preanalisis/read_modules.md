@@ -7,6 +7,7 @@ has_toc: true
 ---
 
 # read_modules.py
+{: .no_toc }
 Este módulo tiene varias funciones que son llamadas tanto por [lidar_master.py](lidar_master) (directamente) como por el módulo [interactivo.py](interactivo).
 
 1. TOC
@@ -258,6 +259,15 @@ def pick_calib(pola_dir, interactivo, picked, use_log):
 ```
 
 ## 4. Ruta de datos (`pick_data(use_log, interactivo, ya_escogido)`)
+
+{: .librerias }
+> Utiliza las siguientes librerías
+> - `os` : Manejo de sistema operativo, búsqueda de carpetas y creación de paths.
+> - `datetime` : Manejo de fechas y 
+> - `numpy` : Librería numérica
+> - `tqdm` : Barras de progreso en iteraciones
+
+
 Una vez escogido un dato (fecha en `ya_escogido`), establecemos la ruta usando la tabla `data.csv`, establecemos las rutas y devolvemos los siguientes parámetros.
 ```python
 def pick_data(use_log, interactivo, ya_escogido):

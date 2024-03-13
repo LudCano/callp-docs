@@ -8,6 +8,8 @@ has_toc: true
 
 # read_modules.py
 Este módulo tiene varias funciones que son llamadas tanto por [lidar_master.py](lidar_master) (directamente) como por el módulo [interactivo.py](interactivo).
+
+1. TOC
 {:toc}
 
 {: .librerias }

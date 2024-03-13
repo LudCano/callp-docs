@@ -15,7 +15,7 @@ Este módulo tiene varias funciones que son llamadas tanto por [lidar_master.py]
 > - `numpy` : Librería numérica
 > - `tqdm` : Barras de progreso en iteraciones
 
-## Selección de lugar (Función `place_selected()`)
+## 1. Selección de lugar (Función `place_selected()`)
 Para definir en qué lugar está siendo ejecutado el código usamos una función llamada `place_selected()`. Esta función busca si existe el archivo llamado `place.py`, en caso cierto define ese como el lugar (para los parámetros predeterminados) y en caso contrario ejecuta la ventana [`pick_place()`](pick_place).
 
 ```python
@@ -28,10 +28,10 @@ def place_selected():
     return
 ```
 
-## Funciones del archivo log
+## 2. Funciones del archivo log
 Las siguientes funciones son utilizadas para escribir en el archivo log, crearlo y crear su header.
 
-### `myprint(text, flg)`
+### 2.1. `myprint(text, flg)`
 Esta función (o mas bien, un proceso) es usada en módulos externos, y nos permite imprimir cualquier cadena de texto directamente en el log actual, para eso necesita el nombre del log una variable global creadad con otra función y una bandera que nos dice si imprimir en log o no (usado para debudding).
 ```python
 def myprint(text, flg):
@@ -44,7 +44,7 @@ def myprint(text, flg):
         print(text)
 ```
 
-### `print_log(txt)`
+### 2.2. `print_log(txt)`
 Esta función es usada solamente en este módulo y sirve simplemente para generar una línea directamente en el log.
 ```python
 def print_log(txt):
@@ -53,8 +53,8 @@ def print_log(txt):
     log.close()
 ```
 
-### `create_log(aux_dir, use_log)`
-**Retorna `log_fname`**
+### 2.3. `create_log(aux_dir, use_log)`
+**Retorna `log_fname`**  
 Genera el log, usando `aux_dir` (carpeta donde se almacenará) y una bandera (`use_log`) para decidir si crear el archivo o no, usa la fecha y hora actual para generar el archivo con el nombre de la hora actual, retorna el nombre de archivo de log `log_fname`.
 ```python
 def create_log(aux_dir, use_log):
@@ -69,6 +69,7 @@ def create_log(aux_dir, use_log):
         log_fname = None
     return log_fname
 ```
+
 
 
 

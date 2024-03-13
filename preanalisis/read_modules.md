@@ -170,7 +170,8 @@ def get_data_list(data_rut, p):
 ```
 
 ## 4. Escoger calibrador (`pick_calib(pola_dir, interactivo, picked, use_log)`)
-{: .warning}
+
+{: .warning} 
 Hasta la presente actualización solamente hay un calibrador, es posible que esta función cambie una vez se tomen más calibradores.
 
 Esta función realiza la búsqueda de calibradores válidos en la carpeta de calibradores `pola_dir`, la búsqueda puede ser interactiva **deprecated**, y si se escoge alguno (fecha almacenada en `picked`, almacena y devuelve las rutas.

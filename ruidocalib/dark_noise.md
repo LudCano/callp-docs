@@ -67,7 +67,7 @@ def dark_noise(ruta_dark, interactivo, plot_dark, use_log):
 ```
 
 ## Gráfico
-El gráfico resultante es semejante a lo siguiente:
+El gráfico resultante es semejante a lo siguiente. En el eje $x$ tenemos el largo del vector resultante, mientras en el eje $y$ la señal oscura obtenida.  
 ![](noise_example.png)
 
 

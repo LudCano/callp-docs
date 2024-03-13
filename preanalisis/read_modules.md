@@ -260,12 +260,11 @@ def pick_calib(pola_dir, interactivo, picked, use_log):
 
 ## 4. Ruta de datos (`pick_data(use_log, interactivo, ya_escogido)`)
 
-{: .librerias }
-> Utiliza las siguientes librerías
-> - `os` : Manejo de sistema operativo, búsqueda de carpetas y creación de paths.
-> - `datetime` : Manejo de fechas y 
-> - `numpy` : Librería numérica
-> - `tqdm` : Barras de progreso en iteraciones
+{: .parametros }
+> Tiene los siguientes inputs:
+> - `use_log` : Imprimir información también en el log.
+> - `interactivo` : (sin uso) Falso desde el uso de interfaz 
+> - `ya_escogido` : Fecha de datos a analizar
 
 
 Una vez escogido un dato (fecha en `ya_escogido`), establecemos la ruta usando la tabla `data.csv`, establecemos las rutas y devolvemos los siguientes parámetros.

@@ -8,6 +8,8 @@ has_toc: true
 
 # Corriente oscura
 
+El cálculo de corriente oscura consiste en obtener una señal cuando el telescopio no recibe señal externa, es decir, está tapado, así podemos descartar esta señal que se debe principalmente a la electrónica propia del instrumento. Para eso necesitamos archivos complementarios llamados **dark**. Este procedimiento se realiza antes de cada disparo de LIDAR, y los perfiles son promediados en tiempo, así obteniendo un único vector de dimensiones $[1000,1]$, este vector será sustraido de los datos en posteriores procesos.
+
 {: .librerias }
 > Utiliza las siguientes librerías
 > - `numpy` : Librería numérica

@@ -100,7 +100,73 @@ def create_header(p, flg):
 El header del log muestra la siguiente información:
 ![](figs/header_log.png)
 
+## 3. Buscando datos (`get_data_list(data_rut, p)`)
+**Genera el archivo `data.csv`**  
+Esta función de forma general busca los datos que cumplan los parámetros deseados dentro de la carpeta `data_rut` (ruta de datos que proviene de [interactivo](interactivo)). Para esto usa la función `os.walk()` que busca tanto en carpetas como en subcarpetas, así los datos se pueden encontrar en cualquier anidación (cada lugar de ejecución tiene diferentes formas de ordenar los datos) y serán encontrados.
 
+```python
+def get_data_list(data_rut, p):
+
+    def get_time_date(x):
+        # OBTIENE LA FECHA Y HORA A PARTIR DE UN TEXTO
+        f = x[:10]
+        h = x[13:15]
+        m = x[15:17]
+        hora = h+":"+m
+        return f, hora
+
+    from place import place
+    # LOS SEPARADORES SON USADOS DE FORMA DIFERENTE
+    # EN WINDOWS Y LINUX
+    if place == "Linux":
+        separador = "/"
+    else:
+        separador = "\\"
+
+    df = open("data.csv", "w")
+    df.write("fecha,hora,tipo,ruta,carpeta\n")
+    c = 0
+    for root, dirs, files in os.walk(data_rut):
+        # BUSQUEDA DE DATOS EN LA CARPETA data_rut
+        if root == p:
+            #exluding looking into the calib files
+            pass
+        elif len(root) > len(p) and root[:len(p)] == p:
+            #excluding entering the calib files directory
+            pass
+        elif len(files) == 2:
+            for i in files:
+                if i[-12:] == "data_2CH.txt":
+                    f, h = get_time_date(i)
+                    r = os.path.join(root, i)
+                    
+                    dr = root.split(separador)
+                    ddr = ""
+                    for i in dr[:-1]:
+                        ddr  = ddr +separador+ i
+                    ddr = ddr[1:]
+                    linea = f + "," + h + ",data," + r + "," + ddr + "\n"
+                    #print(linea)
+                    c = c+1
+                    df.write(linea)
+                if i[-12:] == "dark_2CH.txt":
+                    k = "dark"
+                    f, h = get_time_date(i)
+                    r = os.path.join(root, i)
+
+                    dr = root.split(separador)
+                    ddr = ""
+                    for i in dr[:-1]:
+                        ddr  = ddr +separador+ i
+                    ddr = ddr[1:]
+                    
+                    linea = f + "," + h + ",dark," + r + "," + ddr + "\n"
+                    c = c+1
+                    df.write(linea)
+    print(f"Se escribieron {c} lineas")
+    df.close()
+
+```
 
 
 

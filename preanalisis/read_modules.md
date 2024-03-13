@@ -3,6 +3,7 @@ title: read_modules.py
 layout: default
 nav_order: 1
 parent: Pre análisis
+has_toc: true
 ---
 
 # read_modules.py
@@ -168,5 +169,87 @@ def get_data_list(data_rut, p):
 
 ```
 
+## 4. Escoger calibrador (`pick_calib(pola_dir, interactivo, picked, use_log)`)
+{: .warning}
+Hasta la presente actualización solamente hay un calibrador, es posible que esta función cambie una vez se tomen más calibradores.
 
+Esta función realiza la búsqueda de calibradores válidos en la carpeta de calibradores `pola_dir`, la búsqueda puede ser interactiva **deprecated**, y si se escoge alguno (fecha almacenada en `picked`, almacena y devuelve las rutas.
+
+
+
+```python
+def pick_calib(pola_dir, interactivo, picked, use_log):
+    #*** CAMBIAR SI HAY MAS POLARIZADORES
+    # POR AHORA SOLO HAY UNO
+    # AQUI AQUIIIIII
+    interactivo = False
+    ###
+    carpetas = os.listdir(pola_dir)
+    fechasv = []
+    calib_dark = []
+    calib_p45 = []
+    calib_m45 = []
+    for k in carpetas:
+        pth = os.path.join(pola_dir, k)
+        subpth =  os.listdir(pth)
+        fechasv.append(k)
+        c = 0
+        for i in subpth:
+            if 'dark' in i:
+                
+                xx = os.path.join(pth, i)
+                aux = os.listdir(xx)
+                for l in aux: 
+                    if 'dark' in l: 
+                        calib_dark.append(os.path.join(xx, l))
+                c = c+1
+            if 'p45' in i:
+                xx = os.path.join(pth, i)
+                aux = os.listdir(xx)
+                for l in aux: 
+                    if 'p45' in l: 
+                        calib_p45.append(os.path.join(xx, l))
+                c = c+1
+            if 'm45' in i:
+                xx = os.path.join(pth, i)
+                aux = os.listdir(xx)
+                for l in aux: 
+                    if 'm45' in l: 
+                        calib_m45.append(os.path.join(xx, l))
+                c = c+1
+        if c != 3:
+            myprint(f"{k}: Carpeta incompleta", use_log)
+
+    df = pd.DataFrame(list(zip(fechasv, calib_dark, calib_p45, calib_m45)), columns = ["fecha", "dark", "p45", "m45"])
+
+    #ESCOGIDO
+    #auto
+    if interactivo:
+        print("Datos disponibles de depolarización")
+        for i, j in enumerate(df.fecha):
+            print(i, " >> ",j)
+        print("Escoja un índice")
+        idx = int(input(">>> "))
+        d = df.iloc[idx]
+        ff = d.fecha
+        ruta_p45 = d.p45
+        ruta_m45 = d.m45
+        calib_dark = d.dark
+    else:
+        d = df[df.fecha == picked]
+        if len(d) == 0:
+            myprint("ERROR: FECHA ESCOGIDA DE CALIBRADOR NO VALIDA", use_log)
+            myprint("Revisar parámetro 'calib_picked' o correr en interactivo", use_log)
+            exit
+        else:
+            ruta_p45 = d.p45.to_list()[0]
+            ruta_m45 = d.m45.to_list()[0]
+            calib_dark = d.dark.to_list()[0]
+            ff = d.fecha.to_list()[0]
+    myprint(f"Calibrador de {ff} establecido", use_log)
+    myprint("Correcto!", use_log)
+
+    return ruta_p45, ruta_m45, calib_dark
+
+```
 

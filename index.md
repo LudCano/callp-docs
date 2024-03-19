@@ -11,9 +11,11 @@ El código está escrito en Python, y toma de base el código escrito en MATLAB 
 
 # Últimas actualizaciones
 ## 18/3/2024
-Modalidad Barras: En la ventana de Quicklook se encuentra una nueva sección para dibujar una sección blanca, esto genera que se ignoren esos datos y no se necesite realizar muchos cambios de contraste. Se pueden añadir múltiples regiones blancas y éstas se trasladan al gráfico de depolarización.
+**Modalidad Barras**: En la ventana de Quicklook se encuentra una nueva sección para dibujar una sección blanca, esto genera que se ignoren esos datos y no se necesite realizar muchos cambios de contraste. Se pueden añadir múltiples regiones blancas y éstas se trasladan al gráfico de depolarización.
 
 ![](preanalisis/figs/white_region_example.png)
+
+**Botón actualizar del menú**: El botón actualizar del menú automáticamente pone como única opción al último dato disponible. Para el resto de datos se debe buscar por filtros de año y mes.
 
 ## 4/3/2024
 El código aumentó el módulo de atmósfera estándar y se trabaja en integrarlo al código principal. Bugs surgieron en la búsqueda de carpetas y se encuentra en arreglos. Histogramas dejaron de funcionar.

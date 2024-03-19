@@ -70,4 +70,27 @@ def dark_noise(ruta_dark, interactivo, plot_dark, use_log):
 El gráfico resultante es semejante a lo siguiente. En el eje $x$ tenemos el largo del vector resultante, mientras en el eje $y$ la señal oscura obtenida.  
 ![](noise_example.png)
 
+## Sustraer fondo [`substract_bg(sig, dark)`]
+
+{: .parametros }
+> Tiene los siguientes inputs:
+> - `sig` : Señal de la cual extraer la corriente oscura.
+> - `dark` : Señal oscura a quitar.
+>   
+> Devuelve:
+> - `new_sig` : Señal con ruido extraido.
+
+Esta pequeña función quita la señal de corriente oscura `dark` de una señal dada `sig`. Primero procede a restar la señal oscura de la señal original, luego a este resultado le resta el promedio de los últimos 100 valores del mismo resultado.
+
+```python
+def subtract_bg(sig, dark):
+    """
+    Quita ruido de una señal, quitando el ruido de un canal (por ahora no pregunta)
+    """
+    rnz = 1000
+    sig_dk = sig - dark
+    new_sig =  sig_dk - np.average(sig_dk[rnz-100:rnz])
+    return new_sig
+```
+
 

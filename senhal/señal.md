@@ -20,6 +20,6 @@ El procesamiento de señal consiste en dos grandes pasos, la creación de la se�
 > - `os`: Uso del sistema operativo, creación de carpetas
 > - `tqdm`: Barras de progreso en terminal
 
-## [Creación de la señal](make_sig)
-
 ## [Promediado de la señal](average_sig)
+
+## [Creación de la señal](make_sig)

@@ -54,7 +54,16 @@ def mkavesig(ruta_datos, ch1n, ch2n, cdep, fechas,
         flg = False
 ```
 
-De nuevo, si no encontramos los archivos, tenemos `flg = False` y reailzamos el cálculo leyendo primero la señal del archivo en la ruta `ruta_datos`.. NOta: Apenas leemos el archivo procedemos a guardar los datos leídos en una tupla llamada `signal_read`.
+De nuevo, si no encontramos los archivos, tenemos `flg = False` y reailzamos el cálculo leyendo primero la señal del archivo en la ruta `ruta_datos`. Nota: Apenas leemos el archivo procedemos a guardar los datos leídos en una tupla llamada `signal_read`.
+
+## Cálculo de RCS
+El algoritmo es el siguiente:
+ 1. Creamos una copia de las matrices
+ 2. En la primera copia: para cada columna restamos el vector de ruido correspondiente `s1`
+ 3. En la segunda copia reemplazamos cada columna por la fila `s1`, a la cual restamos el promedio de sus últimos 100 valores (`[900:1000]`)
+ 4. Promediamos toda la matriz por columnas. Terminamos con un vector de largo 1000.
+ 5. En caso el rango sea de 15, colocamos los primeros `bshift` (50) valores como primeros, multiplicamos por la altura al cuadrado.
+ 6. Para el canal 2, multiplicamos este resultado final por el vector `cdep`.
 
 ```python
     if flg == False:
